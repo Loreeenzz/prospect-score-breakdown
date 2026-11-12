@@ -17,6 +17,7 @@ class Deck {
 
     this.initDots();
     this.initLightbox();
+    this.initBusinessSwitcher();
     this.bindEvents();
     this.update();
   }
@@ -211,6 +212,60 @@ class Deck {
     this.lightbox.setAttribute('aria-hidden', 'true');
     if (this.lightboxImg) {
       this.lightboxImg.src = '';
+    }
+  }
+
+  initBusinessSwitcher() {
+    const isPapaVitos = window.location.pathname.includes('papa-vitos') || window.location.hash === '#papa-vitos';
+    this.currentBiz = isPapaVitos ? 'papa-vitos' : 'matchbox';
+    this.applyBusiness(this.currentBiz);
+
+    const buttons = document.querySelectorAll('.biz-pill[data-biz]');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetBiz = btn.getAttribute('data-biz');
+        if (targetBiz && targetBiz !== this.currentBiz) {
+          this.switchBusiness(targetBiz);
+        }
+      });
+    });
+  }
+
+  switchBusiness(biz) {
+    this.currentBiz = biz;
+    this.applyBusiness(biz);
+    try {
+      history.replaceState(null, '', biz === 'papa-vitos' ? '#papa-vitos' : '#matchbox');
+    } catch (err) {}
+  }
+
+  applyBusiness(biz) {
+    // Update active pill state
+    document.querySelectorAll('.biz-pill[data-biz]').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-biz') === biz);
+    });
+
+    // Update Slide 5 Intro Title and Image
+    const introTitle = document.querySelector('.screenshot-intro-title');
+    const introImg = document.querySelector('.screenshot-frame img');
+
+    if (biz === 'papa-vitos') {
+      if (introTitle) {
+        introTitle.innerHTML = 'Sample Business: <span class="highlight-text">Papa Vito\'s Italian Restaurant And Pizza Kitchen</span>';
+      }
+      if (introImg) {
+        introImg.src = 'assets/sample-business-papa-vitos.jpg';
+        introImg.alt = 'Papa Vito\'s Italian Restaurant And Pizza Kitchen Sample Business Audit Screenshot';
+      }
+    } else {
+      if (introTitle) {
+        introTitle.innerHTML = 'Sample Business: <span class="highlight-text">Matchbox</span>';
+      }
+      if (introImg) {
+        introImg.src = 'assets/sample-business-matchbox.jpg';
+        introImg.alt = 'Matchbox Sample Business Audit Screenshot';
+      }
     }
   }
 
