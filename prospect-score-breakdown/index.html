@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prospect Score Breakdown — Prospect Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Text:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+
+  <!-- 16:9 Presentation Slide Canvas -->
+  <main class="deck-viewport" id="deckViewport">
+
+    <!-- ============ SLIDE 1 · COVER ============ -->
+    <section class="slide active" id="slide-1">
+      <!-- Top Right Subtle Arc -->
+      <div class="decor-top-right"></div>
+
+      <!-- Left Concentric Arcs -->
+      <div class="decor-left-inner"></div>
+      <div class="decor-left-outer"></div>
+
+      <!-- Bottom Right Solid & Ring -->
+      <div class="decor-bottom-right-ring"></div>
+      <div class="decor-bottom-right-solid"></div>
+
+      <!-- Centered Slide 1 Content -->
+      <div class="slide-1-content">
+        <div class="score-breakdown-subtitle">SCORE BREAKDOWN</div>
+        <img src="assets/logo.png" alt="Prospect Analyzer Logo" class="main-logo-img">
+      </div>
+    </section>
+
+
+    <!-- ============ SLIDE 2 · GOOGLE BUSINESS PROFILE ============ -->
+    <section class="slide" id="slide-2">
+      <!-- Background Continuity Arcs -->
+      <div class="decor-top-right-subtle"></div>
+      <div class="decor-bottom-left-subtle"></div>
+
+      <!-- Header Bar -->
+      <header class="slide-header-bar">
+        <div class="slide-header-tag">Prospect Score Breakdown • Profile Weights</div>
+        <img src="assets/logo.png" alt="Prospect Analyzer" class="slide-brand-watermark">
+      </header>
+
+      <!-- Main Split Content -->
+      <div class="slide-split-layout">
+        
+        <!-- Left Hero Column -->
+        <div class="gbp-hero-column">
+          <div class="hero-icon-wrap" title="Google Business Profile">
+            <!-- Official Multi-Color Google G SVG -->
+            <svg viewBox="0 0 48 48" width="76" height="76">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              <path fill="none" d="M0 0h48v48H0z"/>
+            </svg>
+          </div>
+
+          <h2 class="gbp-title">GOOGLE BUSINESS PROFILE <span style="color: var(--brand-orange);">(GBP)</span></h2>
+          <p class="gbp-subtitle" style="margin-bottom: 0;">Current Score Weights</p>
+        </div>
+
+        <!-- Right Table Card -->
+        <div class="gbp-table-card">
+          <table class="score-table table-gbp">
+            <thead>
+              <tr>
+                <th>CATEGORY</th>
+                <th class="col-weight">WEIGHT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Directories: 20% -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Directories</span>
+                  </div>
+                </td>
+                <td class="col-weight">20%</td>
+              </tr>
+
+              <!-- Review Count: 10% -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Review Count</span>
+                  </div>
+                </td>
+                <td class="col-weight">10%</td>
+              </tr>
+
+              <!-- Review Recency Count: 10% -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Review Recency Count</span>
+                    <span class="cat-desc">(Recent Reviews & Responses)</span>
+                  </div>
+                </td>
+                <td class="col-weight">10%</td>
+              </tr>
+
+              <!-- Google Posts: 20% -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Google Posts</span>
+                  </div>
+                </td>
+                <td class="col-weight">20%</td>
+              </tr>
+
+              <!-- Photo Count: 10% -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Photo Count</span>
+                    <span class="cat-desc">(Owner & Customer Photo Volume)</span>
+                  </div>
+                </td>
+                <td class="col-weight">10%</td>
+              </tr>
+
+              <!-- Photo Recency: 10% -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Photo Recency</span>
+                    <span class="cat-desc">(Recent Photo Activity)</span>
+                  </div>
+                </td>
+                <td class="col-weight">10%</td>
+              </tr>
+
+              <!-- Star Rating: 10% -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Star Rating</span>
+                  </div>
+                </td>
+                <td class="col-weight">10%</td>
+              </tr>
+
+              <!-- NAP + WH: 5% -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>NAP + WH</span>
+                    <span class="cat-desc">(Name, Address, Phone & Working Hours)</span>
+                  </div>
+                </td>
+                <td class="col-weight">5%</td>
+              </tr>
+
+              <!-- All Fields: 5% -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>All Fields</span>
+                    <span class="cat-desc">(Description & Attributes)</span>
+                  </div>
+                </td>
+                <td class="col-weight">5%</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total</td>
+                <td class="col-weight">
+                  <span class="total-badge">100%</span>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============ SLIDE 3 · WEBSITE ============ -->
+    <section class="slide" id="slide-3">
+      <!-- Background Continuity Arcs -->
+      <div class="decor-top-right-subtle"></div>
+      <div class="decor-bottom-left-subtle"></div>
+
+      <!-- Header Bar -->
+      <header class="slide-header-bar">
+        <div class="slide-header-tag">Prospect Score Breakdown • Website Weights</div>
+        <img src="assets/logo.png" alt="Prospect Analyzer" class="slide-brand-watermark">
+      </header>
+
+      <!-- Main Split Content -->
+      <div class="slide-split-layout">
+        
+        <!-- Left Hero Column -->
+        <div class="gbp-hero-column">
+          <div class="hero-icon-wrap globe-wrap" title="Website Performance & SEO">
+            <!-- Blue Globe Vector -->
+            <svg viewBox="0 0 24 24" width="76" height="76" fill="none" stroke="#00A3FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+
+          <h2 class="gbp-title">WEBSITE</h2>
+          <p class="gbp-subtitle" style="margin-bottom: 0;">Current Score Weights</p>
+        </div>
+
+        <!-- Right Table Card -->
+        <div class="gbp-table-card">
+          <table class="score-table spacious table-web">
+            <thead>
+              <tr>
+                <th>CATEGORY</th>
+                <th class="col-weight">WEIGHT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- On-Page SEO / Technical SEO: 50% -->
+              <tr>
+                <td>
+                  <div class="cat-title" style="font-size: 15px;">
+                    <span>On-Page SEO / Technical SEO</span>
+                  </div>
+                  <div class="cat-desc" style="margin-top: 4px;">Crawlability, metadata, architecture & indexation</div>
+                </td>
+                <td class="col-weight" style="font-size: 16px;">50%</td>
+              </tr>
+
+              <!-- Performance: 45% -->
+              <tr>
+                <td>
+                  <div class="cat-title" style="font-size: 15px;">
+                    <span>Performance</span>
+                  </div>
+                  <div class="cat-desc" style="margin-top: 4px;">Core Web Vitals, page speed & mobile responsiveness</div>
+                </td>
+                <td class="col-weight" style="font-size: 16px;">45%</td>
+              </tr>
+
+              <!-- Best Practices: 5% -->
+              <tr>
+                <td>
+                  <div class="cat-title" style="font-size: 15px;">
+                    <span>Best Practices</span>
+                  </div>
+                  <div class="cat-desc" style="margin-top: 4px;">Security protocols, modern web standards & accessibility</div>
+                </td>
+                <td class="col-weight" style="font-size: 16px;">5%</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total</td>
+                <td class="col-weight">
+                  <span class="total-badge">100%</span>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============ SLIDE 4 · SOC (SOCIAL) ============ -->
+    <section class="slide" id="slide-4">
+      <!-- Background Continuity Arcs -->
+      <div class="decor-top-right-subtle"></div>
+      <div class="decor-bottom-left-subtle"></div>
+
+      <!-- Header Bar -->
+      <header class="slide-header-bar">
+        <div class="slide-header-tag">Prospect Score Breakdown • Social Weights</div>
+        <img src="assets/logo.png" alt="Prospect Analyzer" class="slide-brand-watermark">
+      </header>
+
+      <!-- Main Split Content -->
+      <div class="slide-split-layout">
+        
+        <!-- Left Hero Column -->
+        <div class="gbp-hero-column">
+          <!-- Mini Platform Split Card -->
+          <div class="platform-split-card" title="Platform Distribution">
+            <div class="platform-split-row">
+              <span style="color: #1877F2;">FACEBOOK</span>
+              <span class="platform-split-pct" style="color: #1877F2;">70%</span>
+            </div>
+            <div class="platform-split-row">
+              <span style="color: #E1306C;">INSTAGRAM</span>
+              <span class="platform-split-pct" style="color: #E1306C;">30%</span>
+            </div>
+          </div>
+
+          <!-- Overlapping Social Icons -->
+          <div class="social-icons-pair" title="Facebook & Instagram">
+            <!-- Facebook Icon -->
+            <div class="social-icon-fb">
+              <svg viewBox="0 0 48 48" width="58" height="58">
+                <circle cx="24" cy="24" r="24" fill="#1877F2"/>
+                <path fill="#FFFFFF" d="M29.5 25.5l.8-5.3h-5.1v-3.4c0-1.4.7-2.8 2.9-2.8h2.3V9.5s-2.1-.4-4.1-.4c-4.2 0-7 2.6-7 7.2v3.9h-4.7v5.3h4.7v12.8c1 .2 1.9.2 2.9.2s2-.1 2.9-.2V25.5h4.6z"/>
+              </svg>
+            </div>
+            <!-- Instagram Icon -->
+            <div class="social-icon-ig">
+              <svg viewBox="0 0 48 48" width="58" height="58">
+                <defs>
+                  <radialGradient id="ig-grad-slide4" cx="20%" cy="105%" r="130%">
+                    <stop offset="0%" stop-color="#FFDD55"/>
+                    <stop offset="10%" stop-color="#FFDD55"/>
+                    <stop offset="50%" stop-color="#FF543E"/>
+                    <stop offset="85%" stop-color="#C837AB"/>
+                    <stop offset="100%" stop-color="#3771C8"/>
+                  </radialGradient>
+                </defs>
+                <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#ig-grad-slide4)"/>
+                <rect x="9" y="9" width="30" height="30" rx="8" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+                <circle cx="24" cy="24" r="7" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+                <circle cx="33" cy="15" r="2" fill="#FFFFFF"/>
+              </svg>
+            </div>
+          </div>
+
+          <h2 class="gbp-title" style="margin-top: 4px;">SOC <span style="font-weight: 600; color: var(--text-secondary); font-size: 0.9em;">(Social)</span></h2>
+          <p class="gbp-subtitle" style="margin-bottom: 0;">Current Score Weights</p>
+        </div>
+
+        <!-- Right Tables Column -->
+        <div class="soc-tables-container">
+          
+          <!-- Table 1: Main Social Signals -->
+          <div class="soc-sub-card">
+            <table class="score-table table-soc">
+              <thead>
+                <tr>
+                  <th>CATEGORY</th>
+                  <th class="col-weight">WEIGHT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Post Activity: 85% -->
+                <tr>
+                  <td>
+                    <div class="cat-title">
+                      <span>Post Activity</span>
+                    </div>
+                  </td>
+                  <td class="col-weight">85%</td>
+                </tr>
+
+                <!-- Follower Count: 5% -->
+                <tr>
+                  <td>
+                    <div class="cat-title">
+                      <span>Follower Count</span>
+                    </div>
+                  </td>
+                  <td class="col-weight">5%</td>
+                </tr>
+
+                <!-- Profile Consistency: 5% -->
+                <tr>
+                  <td>
+                    <div class="cat-title">
+                      <span>Profile Consistency</span>
+                    </div>
+                  </td>
+                  <td class="col-weight">5%</td>
+                </tr>
+
+                <!-- Facebook-Instagram Cross-Linking: 5% -->
+                <tr>
+                  <td>
+                    <div class="cat-title">
+                      <span>Facebook–Instagram Cross-Linking</span>
+                    </div>
+                  </td>
+                  <td class="col-weight">5%</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total</td>
+                  <td class="col-weight">
+                    <span class="total-badge">100%</span>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <!-- Table 2: Post Activity Breakdown Deep-Dive -->
+          <div class="soc-sub-card">
+            <div class="subtable-section-title">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              <span>Post Activity Breakdown</span>
+            </div>
+            <table class="score-table table-soc">
+              <thead>
+                <tr>
+                  <th>CATEGORY</th>
+                  <th class="col-weight">WEIGHT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Standard Posts: 65% -->
+                <tr>
+                  <td>
+                    <div class="cat-title">
+                      <span>Standard Posts</span>
+                    </div>
+                  </td>
+                  <td class="col-weight">65%</td>
+                </tr>
+
+                <!-- Video / Reels: 20% -->
+                <tr>
+                  <td>
+                    <div class="cat-title">
+                      <span>Video/Reels</span>
+                    </div>
+                  </td>
+                  <td class="col-weight">20%</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Post Activity Total</td>
+                  <td class="col-weight">
+                    <span class="total-badge">85%</span>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============ SLIDE 5 · SAMPLE CALCULATION INTRO ============ -->
+    <section class="slide" id="slide-5">
+      <!-- Background Continuity Arcs -->
+      <div class="decor-top-right-subtle"></div>
+      <div class="decor-bottom-left-subtle"></div>
+
+      <!-- Header Bar -->
+      <header class="slide-header-bar">
+        <div class="slide-header-tag">Prospect Score Breakdown • Example Case Study</div>
+        <img src="assets/logo.png" alt="Prospect Analyzer" class="slide-brand-watermark">
+      </header>
+
+      <!-- Main Screenshot Intro Content -->
+      <div class="screenshot-intro-container">
+        
+        <!-- Header Text -->
+        <div class="screenshot-intro-header">
+          <div class="example-badge">Example Calculation</div>
+          <h2 class="screenshot-intro-title">
+            Sample Business: <span class="highlight-text">Matchbox</span>
+          </h2>
+          <p class="screenshot-intro-desc">
+            Live audit overview used to demonstrate the step-by-step scoring breakdown and calculations.
+          </p>
+        </div>
+
+        <!-- Embedded Actual Screenshot -->
+        <div class="screenshot-frame">
+          <img src="assets/sample-business-matchbox.jpg" alt="Matchbox Sample Business Audit Screenshot" class="screenshot-img">
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============ SLIDE 6 · MATCHBOX GBP CALCULATION ============ -->
+    <section class="slide" id="slide-6">
+      <!-- Background Continuity Arcs -->
+      <div class="decor-top-right-subtle"></div>
+      <div class="decor-bottom-left-subtle"></div>
+
+      <!-- Header Bar -->
+      <header class="slide-header-bar">
+        <div class="slide-header-tag">Prospect Score Breakdown • Sample Calculation</div>
+        <img src="assets/logo.png" alt="Prospect Analyzer" class="slide-brand-watermark">
+      </header>
+
+      <!-- Main Split Content -->
+      <div class="slide-split-layout">
+        
+        <!-- Left Hero Column -->
+        <div class="gbp-hero-column">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+            <svg viewBox="0 0 48 48" width="38" height="38">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              <path fill="none" d="M0 0h48v48H0z"/>
+            </svg>
+            <div style="text-align: left;">
+              <h2 style="font-size: 16px; font-weight: 700; color: var(--text-dark); line-height: 1.2;">Matchbox (Business)</h2>
+              <p style="font-size: 13px; font-weight: 600; color: var(--text-secondary);">GBP Summary</p>
+            </div>
+          </div>
+
+          <!-- GBP Audit Metric Card Image (Exact, Crisp Image) -->
+          <img src="assets/gbp-card.png" alt="GBP Score 5.8 - Active Contender" style="width: 100%; max-width: 250px; height: auto; border-radius: 14px; box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08); display: block;">
+        </div>
+
+        <!-- Right Table Card -->
+        <div class="gbp-table-card">
+          <table class="score-table table-gbp">
+            <thead>
+              <tr>
+                <th>CATEGORY</th>
+                <th class="col-weight" style="width: 110px;">WEIGHT</th>
+                <th class="col-contrib">CONTRIBUTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Directories: 20% -> 0.52 -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Directories</span>
+                  </div>
+                </td>
+                <td class="col-weight">20%</td>
+                <td class="col-contrib">0.52</td>
+              </tr>
+
+              <!-- Review Count: 10% -> 1.00 -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Review Count</span>
+                  </div>
+                </td>
+                <td class="col-weight">10%</td>
+                <td class="col-contrib">1.00</td>
+              </tr>
+
+              <!-- Review Recency Count: 10% -> 0.50 -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Review Recency Count</span>
+                    <span class="cat-desc">(Recent Reviews & Responses)</span>
+                  </div>
+                </td>
+                <td class="col-weight">10%</td>
+                <td class="col-contrib">0.50</td>
+              </tr>
+
+              <!-- Google Posts: 20% -> 0.00 -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Google Posts</span>
+                  </div>
+                </td>
+                <td class="col-weight">20%</td>
+                <td class="col-contrib" style="color: #94A3B8;">0.00</td>
+              </tr>
+
+              <!-- Photo Count: 10% -> 1.00 -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Photo Count</span>
+                    <span class="cat-desc">(Owner & Customer Photo Volume)</span>
+                  </div>
+                </td>
+                <td class="col-weight">10%</td>
+                <td class="col-contrib">1.00</td>
+              </tr>
+
+              <!-- Photo Recency: 10% -> 1.00 -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Photo Recency</span>
+                    <span class="cat-desc">(Recent Photo Activity)</span>
+                  </div>
+                </td>
+                <td class="col-weight">10%</td>
+                <td class="col-contrib">1.00</td>
+              </tr>
+
+              <!-- Star Rating: 10% -> 0.88 -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>Star Rating</span>
+                  </div>
+                </td>
+                <td class="col-weight">10%</td>
+                <td class="col-contrib">0.88</td>
+              </tr>
+
+              <!-- NAP + WH: 5% -> 0.40 -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>NAP + WH</span>
+                  </div>
+                </td>
+                <td class="col-weight">5%</td>
+                <td class="col-contrib">0.40</td>
+              </tr>
+
+              <!-- All Fields: 5% -> 0.50 -->
+              <tr>
+                <td>
+                  <div class="cat-title">
+                    <span>All Fields</span>
+                    <span class="cat-desc">(Description & Attributes)</span>
+                  </div>
+                </td>
+                <td class="col-weight">5%</td>
+                <td class="col-contrib">0.50</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total</td>
+                <td class="col-weight">
+                  <span class="total-badge">100%</span>
+                </td>
+                <td class="col-contrib">
+                  <span class="total-contrib-score">5.80 / 10</span>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============ SLIDE 7 · REVIEW COUNT BREAKDOWN ============ -->
+    <section class="slide" id="slide-7">
+      <!-- Background Continuity Arcs -->
+      <div class="decor-top-right-subtle"></div>
+      <div class="decor-bottom-left-subtle"></div>
+
+      <!-- Header Bar -->
+      <header class="slide-header-bar">
+        <div class="slide-header-tag">GBP Metric Breakdown • Live Calculation</div>
+        <img src="assets/logo.png" alt="Prospect Analyzer" class="slide-brand-watermark">
+      </header>
+
+      <!-- Main Review Breakdown Content -->
+      <div class="review-breakdown-layout">
+        
+        <!-- Slide Metric Title -->
+        <div>
+          <h2 class="slide-metric-title">Review Count — 10%</h2>
+        </div>
+
+        <div class="review-content-split">
+          
+          <!-- Left Column: 5-Column Scoring Matrix Table -->
+          <div style="display: flex; flex-direction: column;">
+            <div class="matrix-card">
+              <table class="matrix-table">
+                <thead>
+                  <tr>
+                    <th style="width: 85px;">TOTAL REVIEWS</th>
+                    <th style="width: 55px; text-align: center;">POINTS</th>
+                    <th style="width: 100px; text-align: right;">GBP SCORE CONTRIBUTION (10%)</th>
+                    <th style="width: 130px;">ANALYSIS OVERVIEW SECTION</th>
+                    <th>SAMPLE TEMPLATE MESSAGE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1: 250+ (Active for Matchbox) -->
+                  <tr class="active-tier">
+                    <td style="font-weight: 700;">250+</td>
+                    <td style="text-align: center; font-weight: 700;">10</td>
+                    <td style="text-align: right; font-weight: 700;">1.00</td>
+                    <td><span class="text-strength">Profile Strengths</span></td>
+                    <td>“Has 3,227 reviews. Strong review profile.”</td>
+                  </tr>
+
+                  <!-- Row 2: 100-249 -->
+                  <tr>
+                    <td>100–249</td>
+                    <td style="text-align: center;">8</td>
+                    <td style="text-align: right;">0.80</td>
+                    <td><span class="text-strength">Profile Strengths</span></td>
+                    <td>“Has 150 reviews. Strong review profile.”</td>
+                  </tr>
+
+                  <!-- Row 3: 50-99 -->
+                  <tr>
+                    <td>50–99</td>
+                    <td style="text-align: center;">6</td>
+                    <td style="text-align: right;">0.60</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span></td>
+                    <td>“Only 75 reviews. Add more reviews.”</td>
+                  </tr>
+
+                  <!-- Row 4: 10-49 -->
+                  <tr>
+                    <td>10–49</td>
+                    <td style="text-align: center;">3</td>
+                    <td style="text-align: right;">0.30</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span></td>
+                    <td>“Only 25 reviews. Add more reviews.”</td>
+                  </tr>
+
+                  <!-- Row 5: 1-9 -->
+                  <tr>
+                    <td>1–9</td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: right;">0.10</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span></td>
+                    <td>“Only 5 reviews. Add more reviews.”</td>
+                  </tr>
+
+                  <!-- Row 6: 0 -->
+                  <tr>
+                    <td>0</td>
+                    <td style="text-align: center;">0</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span></td>
+                    <td>“No reviews. Add more reviews.”</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Footnote -->
+            <p class="table-footnote">
+              Sample messages are based on the project template. The full message may also include star rating, recent reviews, and responses.
+            </p>
+          </div>
+
+          <!-- Right Column: Matchbox Proof & Live Calculation -->
+          <div class="proof-column">
+            <!-- Exact Matchbox Reviews Image -->
+            <div class="google-listing-card">
+              <img src="assets/matchbox-google-reviews.jpg" alt="Matchbox 3,227 Google Reviews Listing" class="google-listing-img">
+            </div>
+
+            <!-- Calculation Formula -->
+            <div class="calc-formula-card">
+              <div class="calc-formula-row">
+                has <strong>3,227 reviews</strong> → <span class="calc-formula-highlight">10 points</span>
+              </div>
+              <div class="calc-formula-row">
+                <strong>10 points × 10% =</strong> <span class="calc-formula-highlight" style="font-size: 16px;">1.00 point</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============ SLIDE 8 · REVIEW RECENCY COUNT BREAKDOWN ============ -->
+    <section class="slide" id="slide-8">
+      <!-- Background Continuity Arcs -->
+      <div class="decor-top-right-subtle"></div>
+      <div class="decor-bottom-left-subtle"></div>
+
+      <!-- Header Bar -->
+      <header class="slide-header-bar">
+        <div class="slide-header-tag">GBP Metric Breakdown • Live Calculation</div>
+        <img src="assets/logo.png" alt="Prospect Analyzer" class="slide-brand-watermark">
+      </header>
+
+      <!-- Main Review Recency Content -->
+      <div class="review-breakdown-layout">
+        
+        <!-- Slide Metric Title -->
+        <div>
+          <h2 class="slide-metric-title">Review Recency Count — 10%</h2>
+        </div>
+
+        <div class="review-content-split" style="grid-template-columns: 1fr 340px; gap: 20px;">
+          
+          <!-- Left Column: Both Scoring Matrix Tables -->
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            
+            <!-- Table 1: Recent Reviews Volume -->
+            <div class="matrix-card">
+              <div class="matrix-title-badge">
+                <span>1. Recent Review Volume Tiers</span>
+              </div>
+              <table class="matrix-table compact">
+                <thead>
+                  <tr>
+                    <th style="width: 80px;">RECENT REVIEWS</th>
+                    <th style="width: 45px; text-align: center;">POINTS</th>
+                    <th style="width: 95px; text-align: right;">GBP SCORE CONTRIBUTION</th>
+                    <th style="width: 140px;">ANALYSIS OVERVIEW SECTION</th>
+                    <th>SAMPLE TEMPLATE MESSAGE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1: 5+ (Active Tier for Matchbox) -->
+                  <tr class="active-tier">
+                    <td style="font-weight: 700;">5+</td>
+                    <td style="text-align: center; font-weight: 700;">10</td>
+                    <td style="text-align: right; font-weight: 700;">0.50–1.00</td>
+                    <td><span class="text-strength">Profile Strengths</span> <span class="sub-qualifier">for recent-review volume</span></td>
+                    <td>“Regular recent reviews. Strong review profile.”</td>
+                  </tr>
+
+                  <!-- Row 2: 4 -->
+                  <tr>
+                    <td>4</td>
+                    <td style="text-align: center;">8</td>
+                    <td style="text-align: right;">0.40–0.80</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span> <span class="sub-qualifier">for recent-review volume</span></td>
+                    <td>“Only 4 recent reviews. Add more recent reviews.”</td>
+                  </tr>
+
+                  <!-- Row 3: 3 -->
+                  <tr>
+                    <td>3</td>
+                    <td style="text-align: center;">4</td>
+                    <td style="text-align: right;">0.20–0.40</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span> <span class="sub-qualifier">for recent-review volume</span></td>
+                    <td>“Only 3 recent reviews. Add more recent reviews.”</td>
+                  </tr>
+
+                  <!-- Row 4: 2 -->
+                  <tr>
+                    <td>2</td>
+                    <td style="text-align: center;">2</td>
+                    <td style="text-align: right;">0.10–0.20</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span> <span class="sub-qualifier">for recent-review volume</span></td>
+                    <td>“Only 2 recent reviews. Add more recent reviews.”</td>
+                  </tr>
+
+                  <!-- Row 5: 1 -->
+                  <tr>
+                    <td>1</td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: right;">0.05–0.10</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span> <span class="sub-qualifier">for recent-review volume</span></td>
+                    <td>“Only 1 recent review. Add more recent reviews.”</td>
+                  </tr>
+
+                  <!-- Row 6: 0 -->
+                  <tr>
+                    <td>0</td>
+                    <td style="text-align: center;">0</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span></td>
+                    <td>“No recent reviews. Add more reviews.”</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Table 2: Owner Responses Scoring -->
+            <div class="matrix-card">
+              <div class="matrix-title-badge">
+                <span>2. Owner Response Factor Tiers</span>
+              </div>
+              <table class="matrix-table compact">
+                <thead>
+                  <tr>
+                    <th style="width: 80px;">OWNER RESPONSES</th>
+                    <th style="width: 70px; text-align: center;">POINTS AFTER RESPONSE FACTOR</th>
+                    <th style="width: 95px; text-align: right;">GBP SCORE CONTRIBUTION (10%)</th>
+                    <th style="width: 140px;">ANALYSIS OVERVIEW SECTION FOR RESPONSES</th>
+                    <th>SAMPLE TEMPLATE MESSAGE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1: 5 of 5 -->
+                  <tr>
+                    <td>5 of 5 (100%)</td>
+                    <td style="text-align: center;">10</td>
+                    <td style="text-align: right;">1.00</td>
+                    <td><span class="text-strength">Profile Strengths</span></td>
+                    <td>“Responds to recent reviews.”</td>
+                  </tr>
+
+                  <!-- Row 2: 4 of 5 -->
+                  <tr>
+                    <td>4 of 5 (80%)</td>
+                    <td style="text-align: center;">9</td>
+                    <td style="text-align: right;">0.90</td>
+                    <td><span class="text-strength">Profile Strengths</span></td>
+                    <td>“Responds to recent reviews.”</td>
+                  </tr>
+
+                  <!-- Row 3: 3 of 5 -->
+                  <tr>
+                    <td>3 of 5 (60%)</td>
+                    <td style="text-align: center;">8</td>
+                    <td style="text-align: right;">0.80</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span></td>
+                    <td>“Lacking review response from owner. Reply to recent reviews.”</td>
+                  </tr>
+
+                  <!-- Row 4: 2 of 5 -->
+                  <tr>
+                    <td>2 of 5 (40%)</td>
+                    <td style="text-align: center;">7</td>
+                    <td style="text-align: right;">0.70</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span></td>
+                    <td>“Lacking review response from owner. Reply to recent reviews.”</td>
+                  </tr>
+
+                  <!-- Row 5: 1 of 5 -->
+                  <tr>
+                    <td>1 of 5 (20%)</td>
+                    <td style="text-align: center;">6</td>
+                    <td style="text-align: right;">0.60</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span></td>
+                    <td>“Lacking review response from owner. Reply to recent reviews.”</td>
+                  </tr>
+
+                  <!-- Row 6: 0 of 5 (Active Tier for Matchbox) -->
+                  <tr class="active-tier">
+                    <td style="font-weight: 700;">0 of 5 (0%)</td>
+                    <td style="text-align: center; font-weight: 700;">5</td>
+                    <td style="text-align: right; font-weight: 700;">0.50</td>
+                    <td><span class="text-opportunity">Optimization Opportunities</span></td>
+                    <td>“No review response. Reply to recent reviews.”</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Detailed Logic Paragraph -->
+            <p class="table-footnote" style="font-size: 10.5px; margin-top: 2px; color: var(--text-secondary); line-height: 1.4;">
+              Recent reviews and owner responses are checked separately. Five or more recent reviews can appear under Profile Strengths. If fewer than 80% of those reviews received an owner response, a response-related finding can also appear under Optimization Opportunities. The contribution range depends on the response rate; sample messages may be combined with other review findings.
+            </p>
+          </div>
+
+          <!-- Right Column: Matchbox Proof & Live Calculation -->
+          <div class="proof-column" style="gap: 12px;">
+            <!-- Formula & Factor Box -->
+            <div class="recency-formula-box">
+              <div style="text-align: left;">
+                <div style="font-size: 12.5px; margin-bottom: 3px;">
+                  <strong>5 recent reviews</strong> → <span style="color: #16A34A; font-weight: 700;">10 base points</span>
+                </div>
+                <div style="font-size: 12.5px; margin-bottom: 5px;">
+                  <strong>0 responses</strong> → <span style="color: #16A34A; font-weight: 700;">0.5 factor</span>
+                </div>
+                <div style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 2px;">
+                  10 × 0.5 = <span style="color: #16A34A; font-weight: 700;">5 points</span>
+                </div>
+                <div style="font-size: 13.5px; font-weight: 700;">
+                  5 × 10% = <span style="color: #16A34A; font-weight: 800; font-size: 15px;">0.50 point</span>
+                </div>
+              </div>
+
+              <!-- Factor Tip Pill -->
+              <div class="factor-tip">
+                💡 If there are no responses, the factor is 0.5.
+              </div>
+            </div>
+
+            <!-- Two Side-by-Side Screenshots -->
+            <div class="recency-images-row">
+              <div>
+                <div class="recency-img-card">
+                  <img src="assets/recency-reviews.png" alt="Recent Reviews Evidence">
+                </div>
+              </div>
+              <div>
+                <div class="recency-img-caption">Example of response:</div>
+                <div class="recency-img-card">
+                  <img src="assets/recency-response.png" alt="Example of Response Evidence">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Side Progress Indicators -->
+    <div class="dot-indicators"></div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">01 / 08</div>
+
+    <!-- Keyboard Navigation Hint -->
+    <div class="keyboard-hints">
+      <span>← → navigate • F fullscreen</span>
+    </div>
+
+    <!-- Minimal Controls -->
+    <div class="deck-controls">
+      <button class="ctrl-btn" id="prevBtn" title="Previous Slide">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="ctrl-btn" id="nextBtn" title="Next Slide">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+
+  </main>
+
+  <script src="deck.js"></script>
+</body>
+</html>

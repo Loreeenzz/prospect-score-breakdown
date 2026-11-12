@@ -1,0 +1,1037 @@
+/* ==========================================================================
+   Prospect Analyzer — Slide Deck Styles (Light Mode)
+   ========================================================================== */
+
+:root {
+  --bg-slide: #FFFFFF;
+  --text-dark: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --crimson-text: #96002A;
+  --brand-orange: #EE5920;
+  --brand-orange-light: #FF7A00;
+  --brand-orange-soft: rgba(238, 89, 32, 0.08);
+  --peach-accent: #FDECE0;
+  --border-light: rgba(15, 23, 42, 0.08);
+  --font-family: 'Google Sans', 'Google Sans Text', 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-family);
+  background-color: #12161E; /* Neutral dark surround to showcase 16:9 presentation slide */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Slide Deck Wrapper (16:9 aspect ratio standard for PowerPoint presentations) */
+.deck-viewport {
+  position: relative;
+  width: min(100vw, calc(100vh * (16 / 9)));
+  height: min(100vh, calc(100vw * (9 / 16)));
+  background: var(--bg-slide);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+/* Slide Container */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(30px);
+  overflow: hidden;
+  padding: 3.5vh 4vw;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.slide.prev {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+/* ==========================================================================
+   Slide 1: PPT Geometric Decorative Elements
+   ========================================================================== */
+
+/* Top Right Arc */
+.decor-top-right {
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  border: 26px solid var(--peach-accent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Left Concentric Arcs */
+.decor-left-outer {
+  position: absolute;
+  left: -220px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  border: 6px solid var(--brand-orange-light);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decor-left-inner {
+  position: absolute;
+  left: -190px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  border: 22px solid var(--peach-accent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Bottom Right Corner Solid & Ring */
+.decor-bottom-right-solid {
+  position: absolute;
+  bottom: -90px;
+  right: -70px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: var(--brand-orange);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decor-bottom-right-ring {
+  position: absolute;
+  bottom: -110px;
+  right: -90px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 2px solid var(--peach-accent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Slide 1 Centered Content */
+.slide-1-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  margin-top: -10px;
+}
+
+.score-breakdown-subtitle {
+  font-family: var(--font-family);
+  font-size: clamp(14px, 1.8vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--crimson-text);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.main-logo-img {
+  width: clamp(320px, 48vw, 680px);
+  max-width: 90%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   Slide 2: Google Business Profile (GBP) Breakdown
+   ========================================================================== */
+
+/* Top Header Bar on Content Slides */
+.slide-header-bar {
+  position: absolute;
+  top: 24px;
+  left: 4vw;
+  right: 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+}
+
+.slide-header-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--crimson-text);
+  text-transform: uppercase;
+}
+
+.slide-header-tag::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand-orange);
+}
+
+.slide-brand-watermark {
+  height: 24px;
+  opacity: 0.85;
+}
+
+/* Split Layout (Centered 16:9 Presentation Grid) */
+.slide-split-layout {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 320px 600px;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(24px, 3.5vw, 48px);
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+/* Left Hero Column */
+.gbp-hero-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.hero-icon-wrap {
+  width: 140px;
+  height: 140px;
+  border-radius: 36px;
+  background: #FFFFFF;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  margin-bottom: 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-icon-wrap:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 44px rgba(15, 23, 42, 0.12);
+}
+
+.hero-icon-wrap.globe-wrap {
+  background: #F0F9FF;
+  border-color: rgba(0, 163, 255, 0.2);
+}
+
+.gbp-title {
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.gbp-subtitle {
+  font-size: clamp(14px, 1.25vw, 17px);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+/* Quick Summary Pill */
+.gbp-summary-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--brand-orange-soft);
+  border: 1px solid rgba(238, 89, 32, 0.2);
+  border-radius: 14px;
+  padding: 10px 18px;
+  font-size: 13px;
+  color: var(--text-dark);
+  text-align: left;
+}
+
+.gbp-summary-pill strong {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--brand-orange);
+}
+
+/* Right Table Card */
+.gbp-table-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+  height: 100%;
+  max-height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modern Data Table */
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: clamp(11.5px, 1vw, 13.5px);
+  height: 100%;
+}
+
+.score-table thead {
+  background: #F8FAFC;
+  border-bottom: 1.5px solid #E2E8F0;
+}
+
+.score-table th {
+  padding: 12px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+.score-table th.col-weight,
+.score-table td.col-weight {
+  text-align: right;
+  width: 110px;
+  padding-right: 24px;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--text-dark);
+}
+
+.score-table.spacious td.col-weight {
+  font-size: 16px;
+}
+
+.score-table tbody tr {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+  transition: background-color 0.18s ease;
+}
+
+.score-table tbody tr:hover {
+  background-color: #FAFAFC;
+}
+
+.score-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.score-table td {
+  padding: 8.5px 20px;
+  vertical-align: middle;
+}
+
+/* Spacious variant for tables with fewer rows (Slide 3) */
+.score-table.spacious tbody tr td {
+  padding: 26px 24px;
+}
+
+.score-table.spacious .weight-badge {
+  font-size: 16px;
+}
+
+.cat-title {
+  font-weight: 600;
+  color: var(--text-dark);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cat-desc {
+  font-weight: 400;
+  font-size: 0.88em;
+  color: var(--text-muted);
+}
+
+
+
+/* Table Contribution Column */
+.score-table th.col-contrib {
+  text-align: right;
+  padding-right: 20px;
+  width: 120px;
+}
+
+.score-table td.col-contrib {
+  text-align: right;
+  padding-right: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 13.5px;
+}
+
+.score-table tfoot .total-contrib-score {
+  color: #16A34A;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.matchbox-card-meta {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+.score-table tfoot {
+  background: #FFF8F5;
+  border-top: 2px solid rgba(238, 89, 32, 0.25);
+}
+
+.score-table tfoot td {
+  padding: 8px 18px;
+  font-weight: 800;
+  font-size: 13.5px;
+  color: var(--text-dark);
+}
+
+.score-table tfoot .total-badge {
+  display: inline-block;
+  background: var(--brand-orange);
+  color: #FFFFFF;
+  padding: 3px 12px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.weight-badge {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--text-dark) !important;
+  min-width: 42px;
+  text-align: right;
+}
+
+/* Slide 2: GBP Single Solid Color (Orange) */
+.table-gbp .weight-bar-fill {
+  background: #EE5920;
+}
+
+.table-gbp tfoot .total-badge {
+  background: #EE5920;
+}
+
+/* Slide 3: Web Single Solid Color (Blue) */
+.table-web .weight-bar-fill {
+  background: #0084FF;
+}
+
+.table-web tfoot {
+  background: #F0F7FF;
+  border-top: 2px solid rgba(0, 132, 255, 0.25);
+}
+
+.table-web tfoot .total-badge {
+  background: #0084FF;
+}
+
+/* ==========================================================================
+   Slide 5: Example / Sample Calculation Intro (Using Actual Screenshot)
+   ========================================================================== */
+
+.screenshot-intro-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding-top: 14px;
+}
+
+.screenshot-intro-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.example-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--crimson-text);
+  background: rgba(150, 0, 42, 0.08);
+  border: 1px solid rgba(150, 0, 42, 0.22);
+  padding: 4px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.screenshot-intro-title {
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.screenshot-intro-title .highlight-text {
+  color: var(--brand-orange);
+}
+
+.screenshot-intro-desc {
+  font-size: clamp(12.5px, 1.15vw, 14.5px);
+  color: var(--text-secondary);
+  font-weight: 500;
+  max-width: 780px;
+}
+
+/* Framed Screenshot Display */
+.screenshot-frame {
+  width: 100%;
+  max-width: 960px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.1), 0 2px 6px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  overflow: hidden;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.screenshot-img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+}
+.table-soc td {
+  padding: 6.5px 18px;
+  font-size: 12.5px;
+}
+
+.table-soc th {
+  padding: 8px 18px;
+  font-size: 10.5px;
+}
+
+.table-soc .weight-bar-fill {
+  background: #E1306C;
+}
+
+.table-soc tfoot {
+  background: #FFF1F5;
+  border-top: 2px solid rgba(225, 48, 108, 0.25);
+}
+
+.table-soc tfoot td {
+  padding: 7px 18px;
+}
+
+.table-soc tfoot .total-badge {
+  background: #E1306C;
+}
+
+/* Social Hero Elements */
+.social-icons-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 140px;
+  height: 90px;
+  margin-bottom: 12px;
+}
+
+.social-icon-fb {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  z-index: 1;
+  filter: drop-shadow(0 6px 12px rgba(24, 119, 242, 0.25));
+  transition: transform 0.25s ease;
+}
+
+.social-icon-ig {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  z-index: 2;
+  filter: drop-shadow(0 8px 16px rgba(225, 48, 108, 0.3));
+  transition: transform 0.25s ease;
+}
+
+.social-icons-pair:hover .social-icon-fb {
+  transform: translate(-4px, -2px) scale(1.04);
+}
+
+.social-icons-pair:hover .social-icon-ig {
+  transform: translate(4px, 2px) scale(1.04);
+}
+
+/* Platform Mini Split Card (Facebook 70% / Instagram 30%) */
+.platform-split-card {
+  width: 100%;
+  max-width: 280px;
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.platform-split-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-dark);
+}
+
+.platform-split-row:first-child {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.platform-split-pct {
+  font-weight: 800;
+  font-size: 12.5px;
+}
+
+/* Two-card container for Social Right Column */
+.soc-tables-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.soc-sub-card {
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+}
+
+.subtable-section-title {
+  padding: 8px 18px 4px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FAFAFC;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+
+
+/* ==========================================================================
+   Slide 7: Review Count Metric Deep-Dive & Calculation
+   ========================================================================== */
+
+.review-breakdown-layout {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 10px;
+}
+
+.slide-metric-title {
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.review-content-split {
+  display: grid;
+  grid-template-columns: 1fr 310px;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+/* 5-Column Matrix Table */
+.matrix-card {
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 11.5px;
+}
+
+.matrix-table thead {
+  background: #F8FAFC;
+  border-bottom: 1.5px solid #E2E8F0;
+}
+
+.matrix-table th {
+  padding: 10px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.matrix-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+  vertical-align: middle;
+  color: var(--text-dark);
+  font-size: 11.5px;
+}
+
+.matrix-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Compact Matrix Table for Two-Table Slides */
+.matrix-table.compact th {
+  padding: 6px 10px;
+  font-size: 9.5px;
+}
+
+.matrix-table.compact td {
+  padding: 5px 10px;
+  font-size: 11px;
+}
+
+.matrix-title-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dark);
+  padding: 6px 12px 2px 12px;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #FAFAFC;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* Highlighted Active Tier (Matchbox 250+) */
+.matrix-table tr.active-tier {
+  background-color: #F0FDF4;
+}
+
+.matrix-table tr.active-tier td {
+  font-weight: 600;
+}
+
+.matrix-table tr.active-tier td:first-child {
+  border-left: 3px solid #16A34A;
+}
+
+/* Analysis Overview Section Colors */
+.text-strength {
+  color: #2563EB !important;
+  font-weight: 700 !important;
+}
+
+.text-opportunity {
+  color: #DC2626 !important;
+  font-weight: 700 !important;
+}
+
+.sub-qualifier {
+  color: var(--text-dark) !important;
+  font-weight: 400 !important;
+}
+
+.table-footnote {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-top: 10px;
+  padding: 0 4px;
+}
+
+/* Right Side: Live Calculation Proof Card */
+.proof-column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.google-listing-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  overflow: hidden;
+}
+
+.google-listing-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.calc-formula-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 14px 16px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  text-align: left;
+}
+
+.calc-formula-row {
+  font-size: 14px;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.calc-formula-row:last-child {
+  margin-bottom: 0;
+}
+
+.calc-formula-row strong {
+  font-weight: 700;
+}
+
+.calc-formula-highlight {
+  color: #16A34A;
+  font-weight: 800;
+}
+/* Slide 8: Recency Side-by-Side Images & Formula */
+.recency-formula-box {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 10px 14px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.factor-tip {
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 10.5px;
+  color: #92400E;
+  line-height: 1.35;
+  max-width: 140px;
+}
+
+.recency-images-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.recency-img-card {
+  background: #111827;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recency-img-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.recency-img-caption {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.decor-top-right-subtle {
+  position: absolute;
+  top: -140px;
+  right: -90px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 18px solid var(--peach-accent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decor-bottom-left-subtle {
+  position: absolute;
+  bottom: -110px;
+  left: -80px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(238, 89, 32, 0.04);
+  border: 2px solid rgba(238, 89, 32, 0.15);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Navigation & Controls (Subtle & Clean)
+   ========================================================================== */
+
+.deck-controls {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 50;
+}
+
+.ctrl-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #334155;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.ctrl-btn:hover {
+  background: var(--brand-orange-light);
+  color: #FFFFFF;
+  border-color: var(--brand-orange-light);
+}
+
+.slide-counter {
+  position: absolute;
+  bottom: 18px;
+  left: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #94A3B8;
+  letter-spacing: 0.05em;
+  z-index: 50;
+}
+
+.keyboard-hints {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #94A3B8;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 3px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dot-indicators {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 50;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.dot.active {
+  height: 20px;
+  border-radius: 4px;
+  background: var(--brand-orange-light);
+}
+
+/* Fullscreen Slide when Presenting */
+:fullscreen .deck-viewport {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: none;
+}
