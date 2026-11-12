@@ -1035,3 +1035,201 @@ html, body {
   height: 100vh;
   box-shadow: none;
 }
+
+/* ==========================================================================
+   Slide 9: Photo Count Breakdown
+   ========================================================================== */
+
+.photo-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.metric-subtitle-tag {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.photo-view-toggle {
+  display: inline-flex;
+  background: #F1F5F9;
+  padding: 3px;
+  border-radius: 8px;
+  gap: 4px;
+}
+
+.photo-toggle-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-family);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.photo-toggle-btn.active {
+  background: #FFFFFF;
+  color: var(--text-dark);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.photo-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 28px;
+  align-items: start;
+}
+
+.photo-tables-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.photo-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.photo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.photo-table th {
+  background: #F8FAFC;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6.5px 12px;
+  border-bottom: 1px solid #E2E8F0;
+  text-align: left;
+  letter-spacing: 0.03em;
+}
+
+.photo-table th.col-points,
+.photo-table td.col-points {
+  text-align: right;
+  padding-right: 14px;
+}
+
+.photo-table td {
+  padding: 6px 12px;
+  border-bottom: 1px solid #F1F5F9;
+  color: var(--text-dark);
+}
+
+.photo-table tr:last-child td {
+  border-bottom: none;
+}
+
+.photo-table tr.active-tier {
+  background: #F0FDF4;
+  font-weight: 700;
+}
+
+.photo-table tr.active-tier td:first-child {
+  border-left: 3px solid #10B981;
+}
+
+.photo-calc-card {
+  margin-top: 14px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.photo-calc-row {
+  font-size: 13px;
+  color: var(--text-dark);
+}
+
+.photo-calc-row .green-val {
+  color: #16A34A;
+  font-weight: 700;
+}
+
+.photo-phone-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone-mockup-frame {
+  width: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border: 2px solid #CBD5E1;
+  background: #000;
+}
+
+.phone-mockup-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photo-more-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.photo-more-badge svg {
+  animation: bounceDown 1.8s infinite ease-in-out;
+}
+
+.photo-more-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #16A34A;
+  letter-spacing: 0.08em;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* Detailed Matrix View (Hidden by default, toggled via switcher) */
+.photo-matrix-view {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.photo-matrix-view.visible {
+  display: flex;
+}
+
+.photo-summary-view.hidden {
+  display: none;
+}
