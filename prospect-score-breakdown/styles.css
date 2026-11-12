@@ -1439,3 +1439,37 @@ html, body {
   font-size: 11px;
   flex-shrink: 0;
 }
+
+/* NAPWH Styling */
+.text-both {
+  color: #6366F1 !important;
+  font-weight: 700 !important;
+}
+
+.napwh-definition-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFF1F2;
+  border: 1px solid #FFE4E6;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+.napwh-def-title {
+  font-weight: 800;
+  color: #E11D48;
+  letter-spacing: 0.04em;
+}
+
+.napwh-def-items {
+  display: flex;
+  gap: 12px;
+  color: #475569;
+}
+
+.napwh-def-items span strong {
+  color: #9F1239;
+}
