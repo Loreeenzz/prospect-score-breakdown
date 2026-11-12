@@ -1233,3 +1233,200 @@ html, body {
 .photo-summary-view.hidden {
   display: none;
 }
+
+/* ==========================================================================
+   Modern Calculation Cards (Executive UI)
+   ========================================================================== */
+
+.calc-card-v2 {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.calc-card-header {
+  background: #F8FAFC;
+  padding: 8px 14px;
+  border-bottom: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calc-card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #475569;
+  text-transform: uppercase;
+}
+
+.calc-card-tag svg {
+  color: #0284C7;
+}
+
+.calc-steps-list {
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calc-step-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.calc-step-item:hover {
+  background: #F8FAFC;
+}
+
+.calc-step-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calc-step-num {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #E2E8F0;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.calc-step-num.calc-num-final {
+  background: #16A34A;
+  color: #FFFFFF;
+}
+
+.calc-step-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #1E293B;
+  white-space: nowrap;
+}
+
+.calc-step-val {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calc-pill-data {
+  background: #F1F5F9;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2.5px 7px;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+  white-space: nowrap;
+}
+
+.calc-pill-data.warning {
+  background: #FEF3C7;
+  color: #92400E;
+  border-color: #FDE68A;
+}
+
+.calc-step-arrow {
+  color: #94A3B8;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.calc-pill-points {
+  background: #DCFCE7;
+  color: #15803D;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2.5px 7px;
+  border-radius: 6px;
+  border: 1px solid #BBF7D0;
+  white-space: nowrap;
+}
+
+.calc-pill-factor {
+  background: #FEF3C7;
+  color: #B45309;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2.5px 7px;
+  border-radius: 6px;
+  border: 1px solid #FDE68A;
+  white-space: nowrap;
+}
+
+.calc-formula-sub {
+  font-size: 11px;
+  color: #64748B;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.calc-step-item.calc-subcalc {
+  background: #F8FAFC;
+  border: 1px dashed #CBD5E1;
+}
+
+.calc-step-item.calc-step-final {
+  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+  border: 1px solid #86EFAC;
+  padding: 7px 10px;
+  margin-top: 2px;
+}
+
+.calc-final-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calc-badge-total {
+  background: #16A34A;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(22, 163, 74, 0.3);
+  white-space: nowrap;
+}
+
+.calc-note-box {
+  background: #FFFBEB;
+  border-top: 1px solid #FDE68A;
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  color: #92400E;
+  line-height: 1.35;
+}
+
+.calc-note-icon {
+  font-size: 12px;
+  flex-shrink: 0;
+}
