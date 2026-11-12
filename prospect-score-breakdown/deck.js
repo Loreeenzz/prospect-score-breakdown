@@ -16,6 +16,7 @@ class Deck {
     if (this.slides.length === 0) return;
 
     this.initDots();
+    this.initLightbox();
     this.bindEvents();
     this.update();
   }
@@ -38,6 +39,15 @@ class Deck {
     window.addEventListener('keydown', (e) => {
       // Don't intercept if user is typing in an input
       if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+
+      // If lightbox is open, handle Escape or prevent slide navigation
+      if (this.lightbox && this.lightbox.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          this.closeLightbox();
+        }
+        return;
+      }
 
       switch (e.key) {
         case 'ArrowRight':
@@ -149,6 +159,58 @@ class Deck {
     if (index >= 0 && index < this.slides.length) {
       this.currentIndex = index;
       this.update();
+    }
+  }
+
+  initLightbox() {
+    this.lightbox = document.getElementById('imageLightbox');
+    this.lightboxImg = document.getElementById('lightboxImg');
+    this.lightboxCaption = document.getElementById('lightboxCaption');
+    this.lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+
+    if (!this.lightbox || !this.lightboxImg) return;
+
+    // Attach click-to-zoom to all content images across slides
+    const contentImages = document.querySelectorAll('.slide img:not(.slide-brand-watermark):not(.main-logo-img)');
+    contentImages.forEach(img => {
+      img.setAttribute('title', 'Click to zoom and view full resolution');
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.openLightbox(img.src, img.alt);
+      });
+    });
+
+    // Close when clicking backdrop or anywhere outside the modal image
+    this.lightbox.addEventListener('click', (e) => {
+      if (e.target !== this.lightboxImg) {
+        this.closeLightbox();
+      }
+    });
+
+    if (this.lightboxCloseBtn) {
+      this.lightboxCloseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.closeLightbox();
+      });
+    }
+  }
+
+  openLightbox(src, caption) {
+    if (!this.lightbox || !this.lightboxImg) return;
+    this.lightboxImg.src = src;
+    if (this.lightboxCaption) {
+      this.lightboxCaption.textContent = caption || '';
+    }
+    this.lightbox.classList.add('active');
+    this.lightbox.setAttribute('aria-hidden', 'false');
+  }
+
+  closeLightbox() {
+    if (!this.lightbox) return;
+    this.lightbox.classList.remove('active');
+    this.lightbox.setAttribute('aria-hidden', 'true');
+    if (this.lightboxImg) {
+      this.lightboxImg.src = '';
     }
   }
 
