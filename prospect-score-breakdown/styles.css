@@ -1643,3 +1643,9 @@ html, body {
   color: #FFFFFF;
   box-shadow: 0 2px 8px rgba(255, 87, 34, 0.35);
 }
+
+.biz-pill.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
