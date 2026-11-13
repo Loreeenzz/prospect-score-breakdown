@@ -263,7 +263,7 @@ class Deck {
         introTitle.innerHTML = 'Sample Business: <span class="highlight-text">Matchbox</span>';
       }
       if (introImg) {
-        introImg.src = 'assets/sample-business-matchbox.jpg';
+        introImg.src = 'assets/sample-business-matchbox.png';
         introImg.alt = 'Matchbox Sample Business Audit Screenshot';
       }
     }
